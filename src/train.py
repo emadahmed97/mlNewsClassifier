@@ -28,7 +28,7 @@ from transformers import BertModel
 from typing_extensions import Annotated
 
 from src import data, utils
-from src.config import EFS_DIR, ML_FLOW_TRACKING_URI, logger
+from src.config import EFS_DIR, MLFLOW_TRACKING_URI, logger
 from src.models import FinetunedLLM
 
 app = typer.Typer()
@@ -145,7 +145,7 @@ def train_model(
     )
 
     mlflow_callback = MLflowLoggerCallback(
-        tracking_uri=ML_FLOW_TRACKING_URI,
+        tracking_uri=MLFLOW_TRACKING_URI,
         experiment_name=experiment_name,
         save_artifact=True
     )
