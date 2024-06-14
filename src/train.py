@@ -27,9 +27,10 @@ from torch.nn.parallel.distributed import DistributedDataParallel
 from transformers import BertModel
 from typing_extensions import Annotated
 
-from src import data, utils
-from src.config import EFS_DIR, MLFLOW_TRACKING_URI, logger
-from src.models import FinetunedLLM
+
+from config import EFS_DIR, MLFLOW_TRACKING_URI, logger
+from models import FinetunedLLM
+import data, utils
 
 app = typer.Typer()
 
@@ -112,17 +113,18 @@ def train_loop_per_worker(config: dict):
             checkpoint = Checkpoint.from_directory(dp)
             train.report(metrics, checkpoint=checkpoint)
 
+@app.command()
 def train_model(
-    experiment_name: str,
-    dataset_loc: str,
-    train_loop_config: str,
-    num_workers: int, 
-    cpu_per_worker: int,
-    gpu_per_worker: int,
-    num_samples: int,
-    num_epochs: int,
-    batch_size: int,
-    results_fp: str
+    experiment_name: Annotated[str, typer.Option(help="name of the experiment for this training workload.")] = None,
+    dataset_loc: Annotated[str, typer.Option(help="location of the dataset.")] = None,
+    train_loop_config: Annotated[str, typer.Option(help="arguments to use for training.")] = None,
+    num_workers: Annotated[int, typer.Option(help="number of workers to use for training.")] = 1,
+    cpu_per_worker: Annotated[int, typer.Option(help="number of CPUs to use per worker.")] = 1,
+    gpu_per_worker: Annotated[int, typer.Option(help="number of GPUs to use per worker.")] = 0,
+    num_samples: Annotated[int, typer.Option(help="number of samples to use from dataset.")] = None,
+    num_epochs: Annotated[int, typer.Option(help="number of epochs to train for.")] = 1,
+    batch_size: Annotated[int, typer.Option(help="number of samples per batch.")] = 256,
+    results_fp: Annotated[str, typer.Option(help="filepath to save results to.")] = None,
 ) -> ray.air.result.Result:
     # Setup
     training_loop_config = json.loads(train_loop_config)
@@ -157,6 +159,8 @@ def train_model(
     # Dataset
     ds = data.load_data(dataset_loc=dataset_loc, num_samples=training_loop_config["num_samples"])
     train_ds, val_ds = data.stratify_split(ds, stratify="tag", test_size=0.2)
+    print("TRAINNN__DSSS")
+    print(train_ds)
     tags = train_ds.unique(column="tag")
     training_loop_config["num_classes"] = len(tags)
 
@@ -164,16 +168,19 @@ def train_model(
     options = ray.data.ExecutionOptions(preserve_order=True)
     dataset_config = DataConfig(datasets_to_split=["train"], execution_options=options)
 
-    preprocessor = data.CustomPreProcessor()
+    preprocessor = data.CustomPreprocessor()
     preprocessor = preprocessor.fit(train_ds)
     train_ds = preprocessor.transform(train_ds)
     val_ds = preprocessor.transform(val_ds)
     train_ds = train_ds.materialize()
     val_ds = val_ds.materialize()
 
+    print("TRAINNN__DSSS 2")
+    print(train_ds)
+
     trainer = TorchTrainer(
-        train_loop_per_worker=training_loop_per_worker,
-        train_loop_config=train_loop_config,
+        train_loop_per_worker=train_loop_per_worker,
+        train_loop_config=training_loop_config,
         scaling_config=scaling_config,
         run_config=run_config,
     )
@@ -183,7 +190,7 @@ def train_model(
         "timestamp": datetime.datetime.now().strftime("%B %d, %Y %I:%M:%S %p"),
         "run_id": utils.get_run_id(experiment_name=experiment_name, trial_id=results.metrics["trial_id"]),
         "params": results.config["train_loop_config"],
-        "metrics": "utils.dict_to_list"(results.metrics_dataframe.to_dict(), keys=["epoch", "train_loss", "val_loss"])
+        "metrics": utils.dict_to_list(results.metrics_dataframe.to_dict(), keys=["epoch", "train_loss", "val_loss"]),
     }
     logger.info(json.dumps(d, indent=2))
     if results_fp:
