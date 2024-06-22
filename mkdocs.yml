@@ -1,0 +1,19 @@
+site_name: Ml News Classifier
+site_url: https://mlNewsClassifier.com/
+repo_url: https://github.com/emadahmed97/mlNewsClassifier
+nav:
+  - Home: index.md
+  - mlNewsClassifier:
+    - data: mlNewsClassifier/data.md
+    - models: mlNewsClassifier/models.md
+    - train: mlNewsClassifier/train.md
+    - tune: mlNewsClassifier/tune.md
+    - evaluate: mlNewsClassifier/evaluate.md
+    - predict: mlNewsClassifier/predict.md
+    - serve: mlNewsClassifier/serve.md
+    - utils: mlNewsClassifier/utils.md
+theme: readthedocs
+plugins:
+  - mkdocstrings
+watch:
+  - .  # reload docs for any file changes

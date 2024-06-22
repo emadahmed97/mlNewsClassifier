@@ -10,12 +10,14 @@ from transformers import BertTokenizer
 
 from config import STOPWORDS
 
+
 def load_data(dataset_loc: str, num_samples: int = 0) -> Dataset:
     # Load data from source into ray dataset
     ds = ray.data.read_csv(dataset_loc)
     ds = ds.random_shuffle(seed=1234)
     ds = ray.data.from_items(ds.take(num_samples)) if num_samples else ds
     return ds
+
 
 def stratify_split(
     ds: Dataset,
@@ -63,10 +65,12 @@ def stratify_split(
 
     return train_ds, test_ds
 
+
 def tokenize(batch: Dict) -> Dict:
     tokenizer = BertTokenizer.from_pretrained("allenai/scibert_scivocab_uncased", return_dict=False)
     encoded_inputs = tokenizer(batch["text"].tolist(), return_tensors="np", padding="longest")
     return dict(ids=encoded_inputs["input_ids"], masks=encoded_inputs["attention_mask"], targets=np.array(batch["tag"]))
+
 
 def preprocess(df: pd.DataFrame, class_to_index: Dict) -> Dict:
     df["text"] = df.title + " " + df.description
@@ -110,7 +114,7 @@ class CustomPreprocessor:
     def __init__(self, class_to_index={}):
         self.class_to_index = class_to_index or {}
         self.index_to_class = {v: k for k, v in self.class_to_index.items()}
-    
+
     def fit(self, ds):
         tags = ds.unique(column="tag")
         self.class_to_index = {tag: i for i, tag in enumerate(tags)}

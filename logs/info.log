@@ -1,0 +1,227 @@
+INFO 2024-06-21 22:09:11,379 [snapshot_util:snapshot_util.py:_list_git_files:433]
+Found 109 files in git repo /home/ray/default/mlNewsClassifier.
+
+INFO 2024-06-21 22:09:11,380 [snapshot_util:snapshot_util.py:filtering_files:760]
+Snapshot is for job submit, omitting .git/ files.
+
+INFO 2024-06-21 22:09:11,381 [snapshot_util:snapshot_util.py:create_snapshot_zip:850]
+Zipping 13 files found in ..
+
+INFO 2024-06-21 22:09:11,382 [snapshot_util:snapshot_util.py:create_snapshot_zip:863]
+Created snapshot for . at /tmp/snapshot_2024-06-22T05:09:11.253371+00:00_jr2ncriz.zip of size 46.96 KB in 0.130s.
+
+INFO 2024-06-21 22:09:11,397 [botocore.credentials:credentials.py:load:1052]
+Found credentials from IAM Role: cld_687vr811i8iph65wrrin4zwmi9-cluster-node-role
+
+INFO 2024-06-21 22:09:11,635 [snapshot_util:snapshot_util.py:env_hook:1912]
+Updated runtime env to {'env_vars': {'GITHUB_USERNAME': 'emadahmed97'}, 'cgroupv2': {}, 'working_dir': '/tmp/ray_latest_runtime_env.zip', 'pip': ['ray[data,serve,train,tune]', 'torch', 'transformers', 'scikit-learn', 'nltk', 'mlflow', 'hyperopt', 'typer'], 'ray_debugger': {'working_dir': '/home/ray/default/mlNewsClassifier'}}
+
+INFO 2024-06-21 22:09:39,742 [snapshot_util:snapshot_util.py:_list_git_files:433]
+Found 109 files in git repo /home/ray/default/mlNewsClassifier.
+
+INFO 2024-06-21 22:09:39,742 [snapshot_util:snapshot_util.py:filtering_files:760]
+Snapshot is for job submit, omitting .git/ files.
+
+INFO 2024-06-21 22:09:39,743 [snapshot_util:snapshot_util.py:create_snapshot_zip:850]
+Zipping 13 files found in ..
+
+INFO 2024-06-21 22:09:39,745 [snapshot_util:snapshot_util.py:create_snapshot_zip:863]
+Created snapshot for . at /tmp/snapshot_2024-06-22T05:09:39.596789+00:00_t6ssyix7.zip of size 48.10 KB in 0.148s.
+
+INFO 2024-06-21 22:09:39,760 [botocore.credentials:credentials.py:load:1052]
+Found credentials from IAM Role: cld_687vr811i8iph65wrrin4zwmi9-cluster-node-role
+
+INFO 2024-06-21 22:09:40,016 [snapshot_util:snapshot_util.py:env_hook:1912]
+Updated runtime env to {'env_vars': {'GITHUB_USERNAME': 'emadahmed97'}, 'cgroupv2': {}, 'working_dir': '/tmp/ray_latest_runtime_env.zip', 'pip': ['ray[data,serve,train,tune]', 'torch', 'transformers', 'scikit-learn', 'nltk', 'mlflow', 'hyperopt', 'typer'], 'ray_debugger': {'working_dir': '/home/ray/default/mlNewsClassifier'}}
+
+INFO 2024-06-21 22:10:51,459 [snapshot_util:snapshot_util.py:_list_git_files:433]
+Found 109 files in git repo /home/ray/default/mlNewsClassifier.
+
+INFO 2024-06-21 22:10:51,460 [snapshot_util:snapshot_util.py:filtering_files:760]
+Snapshot is for job submit, omitting .git/ files.
+
+INFO 2024-06-21 22:10:51,460 [snapshot_util:snapshot_util.py:create_snapshot_zip:850]
+Zipping 13 files found in ..
+
+INFO 2024-06-21 22:10:51,462 [snapshot_util:snapshot_util.py:create_snapshot_zip:863]
+Created snapshot for . at /tmp/snapshot_2024-06-22T05:10:51.335041+00:00_7jy1ch9n.zip of size 49.23 KB in 0.127s.
+
+INFO 2024-06-21 22:10:51,477 [botocore.credentials:credentials.py:load:1052]
+Found credentials from IAM Role: cld_687vr811i8iph65wrrin4zwmi9-cluster-node-role
+
+INFO 2024-06-21 22:10:51,716 [snapshot_util:snapshot_util.py:env_hook:1912]
+Updated runtime env to {'env_vars': {'GITHUB_USERNAME': 'emadahmed97'}, 'cgroupv2': {}, 'working_dir': '/tmp/ray_latest_runtime_env.zip', 'pip': ['ray[data,serve,train,tune]', 'torch', 'transformers', 'scikit-learn', 'nltk', 'mlflow', 'hyperopt', 'typer'], 'ray_debugger': {'working_dir': '/home/ray/default/mlNewsClassifier'}}
+
+INFO 2024-06-21 22:13:55,623 [snapshot_util:snapshot_util.py:_list_git_files:433]
+Found 109 files in git repo /home/ray/default/mlNewsClassifier.
+
+INFO 2024-06-21 22:13:55,623 [snapshot_util:snapshot_util.py:filtering_files:760]
+Snapshot is for job submit, omitting .git/ files.
+
+INFO 2024-06-21 22:13:55,624 [snapshot_util:snapshot_util.py:create_snapshot_zip:850]
+Zipping 13 files found in ..
+
+INFO 2024-06-21 22:13:55,625 [snapshot_util:snapshot_util.py:create_snapshot_zip:863]
+Created snapshot for . at /tmp/snapshot_2024-06-22T05:13:55.490032+00:00_lime0x5o.zip of size 50.37 KB in 0.136s.
+
+INFO 2024-06-21 22:13:55,641 [botocore.credentials:credentials.py:load:1052]
+Found credentials from IAM Role: cld_687vr811i8iph65wrrin4zwmi9-cluster-node-role
+
+INFO 2024-06-21 22:13:55,881 [snapshot_util:snapshot_util.py:env_hook:1912]
+Updated runtime env to {'env_vars': {'GITHUB_USERNAME': 'emadahmed97'}, 'cgroupv2': {}, 'working_dir': '/tmp/ray_latest_runtime_env.zip', 'pip': ['ray[data,serve,train,tune]', 'torch', 'transformers', 'scikit-learn', 'nltk', 'mlflow', 'hyperopt', 'typer'], 'ray_debugger': {'working_dir': '/home/ray/default/mlNewsClassifier'}}
+
+WARNING 2024-06-21 22:14:20,249 [aim.utils.tracking:tracking.py:_warn_once:104]
+--------------------------------------------------------------------------
+
+WARNING 2024-06-21 22:14:20,249 [aim.utils.tracking:tracking.py:_warn_once:105]
+                 Aim collects anonymous usage analytics.                 
+
+WARNING 2024-06-21 22:14:20,249 [aim.utils.tracking:tracking.py:_warn_once:108]
+                        Read how to opt-out here:                         
+
+WARNING 2024-06-21 22:14:20,250 [aim.utils.tracking:tracking.py:_warn_once:111]
+    https://aimstack.readthedocs.io/en/latest/community/telemetry.html    
+
+WARNING 2024-06-21 22:14:20,250 [aim.utils.tracking:tracking.py:_warn_once:114]
+--------------------------------------------------------------------------
+
+INFO 2024-06-21 22:16:33,325 [snapshot_util:snapshot_util.py:_list_git_files:433]
+Found 109 files in git repo /home/ray/default/mlNewsClassifier.
+
+INFO 2024-06-21 22:16:33,326 [snapshot_util:snapshot_util.py:filtering_files:760]
+Snapshot is for job submit, omitting .git/ files.
+
+INFO 2024-06-21 22:16:33,326 [snapshot_util:snapshot_util.py:create_snapshot_zip:850]
+Zipping 13 files found in ..
+
+INFO 2024-06-21 22:16:33,328 [snapshot_util:snapshot_util.py:create_snapshot_zip:863]
+Created snapshot for . at /tmp/snapshot_2024-06-22T05:16:33.190896+00:00_ua3778xl.zip of size 52.26 KB in 0.138s.
+
+INFO 2024-06-21 22:16:33,344 [botocore.credentials:credentials.py:load:1052]
+Found credentials from IAM Role: cld_687vr811i8iph65wrrin4zwmi9-cluster-node-role
+
+INFO 2024-06-21 22:16:33,605 [snapshot_util:snapshot_util.py:env_hook:1912]
+Updated runtime env to {'env_vars': {'GITHUB_USERNAME': 'emadahmed97'}, 'cgroupv2': {}, 'working_dir': '/tmp/ray_latest_runtime_env.zip', 'pip': ['ray[data,serve,train,tune]', 'torch', 'transformers', 'scikit-learn', 'nltk', 'mlflow', 'hyperopt', 'typer'], 'ray_debugger': {'working_dir': '/home/ray/default/mlNewsClassifier'}}
+
+INFO 2024-06-21 22:20:03,640 [snapshot_util:snapshot_util.py:_list_git_files:433]
+Found 109 files in git repo /home/ray/default/mlNewsClassifier.
+
+INFO 2024-06-21 22:20:03,641 [snapshot_util:snapshot_util.py:filtering_files:760]
+Snapshot is for job submit, omitting .git/ files.
+
+INFO 2024-06-21 22:20:03,641 [snapshot_util:snapshot_util.py:create_snapshot_zip:850]
+Zipping 13 files found in ..
+
+INFO 2024-06-21 22:20:03,643 [snapshot_util:snapshot_util.py:create_snapshot_zip:863]
+Created snapshot for . at /tmp/snapshot_2024-06-22T05:20:03.478041+00:00_s42motk7.zip of size 53.40 KB in 0.165s.
+
+INFO 2024-06-21 22:20:03,658 [botocore.credentials:credentials.py:load:1052]
+Found credentials from IAM Role: cld_687vr811i8iph65wrrin4zwmi9-cluster-node-role
+
+INFO 2024-06-21 22:20:03,995 [snapshot_util:snapshot_util.py:env_hook:1912]
+Updated runtime env to {'env_vars': {'GITHUB_USERNAME': 'emadahmed97'}, 'cgroupv2': {}, 'working_dir': '/tmp/ray_latest_runtime_env.zip', 'pip': ['ray[data,serve,train,tune]', 'torch', 'transformers', 'scikit-learn', 'nltk', 'mlflow', 'hyperopt', 'typer'], 'ray_debugger': {'working_dir': '/home/ray/default/mlNewsClassifier'}}
+
+INFO 2024-06-21 22:27:07,853 [snapshot_util:snapshot_util.py:_list_git_files:433]
+Found 109 files in git repo /home/ray/default/mlNewsClassifier.
+
+INFO 2024-06-21 22:27:07,853 [snapshot_util:snapshot_util.py:filtering_files:760]
+Snapshot is for job submit, omitting .git/ files.
+
+INFO 2024-06-21 22:27:07,854 [snapshot_util:snapshot_util.py:create_snapshot_zip:850]
+Zipping 13 files found in ..
+
+INFO 2024-06-21 22:27:07,856 [snapshot_util:snapshot_util.py:create_snapshot_zip:863]
+Created snapshot for . at /tmp/snapshot_2024-06-22T05:27:07.726927+00:00_pfanxn66.zip of size 54.57 KB in 0.129s.
+
+INFO 2024-06-21 22:27:07,870 [botocore.credentials:credentials.py:load:1052]
+Found credentials from IAM Role: cld_687vr811i8iph65wrrin4zwmi9-cluster-node-role
+
+INFO 2024-06-21 22:27:08,108 [snapshot_util:snapshot_util.py:env_hook:1912]
+Updated runtime env to {'env_vars': {'GITHUB_USERNAME': 'emadahmed97'}, 'cgroupv2': {}, 'working_dir': '/tmp/ray_latest_runtime_env.zip', 'pip': ['ray[data,serve,train,tune]', 'torch', 'transformers', 'scikit-learn', 'nltk', 'mlflow', 'hyperopt', 'typer'], 'ray_debugger': {'working_dir': '/home/ray/default/mlNewsClassifier'}}
+
+INFO 2024-06-21 22:36:01,622 [snapshot_util:snapshot_util.py:_list_git_files:433]
+Found 109 files in git repo /home/ray/default/mlNewsClassifier.
+
+INFO 2024-06-21 22:36:01,622 [snapshot_util:snapshot_util.py:filtering_files:760]
+Snapshot is for job submit, omitting .git/ files.
+
+INFO 2024-06-21 22:36:01,623 [snapshot_util:snapshot_util.py:create_snapshot_zip:850]
+Zipping 13 files found in ..
+
+INFO 2024-06-21 22:36:01,625 [snapshot_util:snapshot_util.py:create_snapshot_zip:863]
+Created snapshot for . at /tmp/snapshot_2024-06-22T05:36:01.480673+00:00__307ti_8.zip of size 55.86 KB in 0.144s.
+
+INFO 2024-06-21 22:36:01,639 [botocore.credentials:credentials.py:load:1052]
+Found credentials from IAM Role: cld_687vr811i8iph65wrrin4zwmi9-cluster-node-role
+
+INFO 2024-06-21 22:36:01,934 [snapshot_util:snapshot_util.py:env_hook:1912]
+Updated runtime env to {'env_vars': {'GITHUB_USERNAME': 'emadahmed97'}, 'cgroupv2': {}, 'working_dir': '/tmp/ray_latest_runtime_env.zip', 'pip': ['ray[data,serve,train,tune]', 'torch', 'transformers', 'scikit-learn', 'nltk', 'mlflow', 'hyperopt', 'typer'], 'ray_debugger': {'working_dir': '/home/ray/default/mlNewsClassifier'}}
+
+INFO 2024-06-21 22:39:47,357 [root:train.py:train_model:200]
+{
+  "timestamp": "June 21, 2024 10:39:41 PM",
+  "run_id": "6700b47ae7534dc6b645520131e208d3",
+  "params": {
+    "dropout_p": 0.5,
+    "lr": 0.0001,
+    "lr_factor": 0.8,
+    "lr_patience": 3,
+    "num_samples": null,
+    "num_epochs": 10,
+    "batch_size": 256,
+    "num_classes": 4
+  },
+  "metrics": [
+    {
+      "epoch": 0,
+      "train_loss": 0.6543098489443461,
+      "val_loss": 0.5067694783210754
+    },
+    {
+      "epoch": 1,
+      "train_loss": 0.5166756510734558,
+      "val_loss": 0.4929044544696808
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.49275622765223187,
+      "val_loss": 0.4373406171798706
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.4167221983273824,
+      "val_loss": 0.3378339409828186
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.31871169805526733,
+      "val_loss": 0.2394876629114151
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.2318259576956431,
+      "val_loss": 0.20192937552928925
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.16441250344117483,
+      "val_loss": 0.1679377257823944
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.11370766659577687,
+      "val_loss": 0.14489518105983734
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.07823683445652325,
+      "val_loss": 0.1365036964416504
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.04932107528050741,
+      "val_loss": 0.13562048971652985
+    }
+  ]
+}
+
