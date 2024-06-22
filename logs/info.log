@@ -74,13 +74,13 @@ WARNING 2024-06-21 22:14:20,249 [aim.utils.tracking:tracking.py:_warn_once:104]
 --------------------------------------------------------------------------
 
 WARNING 2024-06-21 22:14:20,249 [aim.utils.tracking:tracking.py:_warn_once:105]
-                 Aim collects anonymous usage analytics.                 
+                 Aim collects anonymous usage analytics.
 
 WARNING 2024-06-21 22:14:20,249 [aim.utils.tracking:tracking.py:_warn_once:108]
-                        Read how to opt-out here:                         
+                        Read how to opt-out here:
 
 WARNING 2024-06-21 22:14:20,250 [aim.utils.tracking:tracking.py:_warn_once:111]
-    https://aimstack.readthedocs.io/en/latest/community/telemetry.html    
+    https://aimstack.readthedocs.io/en/latest/community/telemetry.html
 
 WARNING 2024-06-21 22:14:20,250 [aim.utils.tracking:tracking.py:_warn_once:114]
 --------------------------------------------------------------------------
@@ -224,4 +224,3 @@ INFO 2024-06-21 22:39:47,357 [root:train.py:train_model:200]
     }
   ]
 }
-
