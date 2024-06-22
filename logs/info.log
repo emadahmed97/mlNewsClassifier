@@ -224,3 +224,15 @@ INFO 2024-06-21 22:39:47,357 [root:train.py:train_model:200]
     }
   ]
 }
+INFO 2024-06-21 23:27:32,909 [torch.distributed.nn.jit.instantiator:instantiator.py:<module>:21]
+Created a temporary directory at /tmp/tmp38y6pumc
+
+INFO 2024-06-21 23:27:32,909 [torch.distributed.nn.jit.instantiator:instantiator.py:_write:76]
+Writing /tmp/tmp38y6pumc/_remote_module_non_scriptable.py
+
+INFO 2024-06-21 23:29:14,020 [torch.distributed.nn.jit.instantiator:instantiator.py:<module>:21]
+Created a temporary directory at /tmp/tmp99esqb3q
+
+INFO 2024-06-21 23:29:14,021 [torch.distributed.nn.jit.instantiator:instantiator.py:_write:76]
+Writing /tmp/tmp99esqb3q/_remote_module_non_scriptable.py
+
