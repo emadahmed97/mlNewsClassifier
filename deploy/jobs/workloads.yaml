@@ -1,10 +1,10 @@
 name: workloads
 project_id: prj_tryzq3fhhfzk7k9feigcwt461j
-cluster_env: lNewsClassifier
+cluster_env: lNewsClassifier:1
 compute_config: ml-news-classifier
 runtime_env:
   working_dir: .
-  upload_path: s3://madewithml/emadahmed97/jobs  # <--- CHANGE USERNAME (case-sensitive)
+  upload_path: s3://ml-news-classifier  # <--- CHANGE USERNAME (case-sensitive)
   env_vars:
     GITHUB_USERNAME: emadahmed97  # <--- CHANGE USERNAME (case-sensitive)
 entrypoint: bash deploy/jobs/workloads.sh

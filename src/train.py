@@ -123,6 +123,9 @@ def train_model(
     batch_size: Annotated[int, typer.Option(help="number of samples per batch.")] = 256,
     results_fp: Annotated[str, typer.Option(help="filepath to save results to.")] = None,
 ) -> ray.air.result.Result:
+    """
+    python src/train.py         --experiment-name "$EXPERIMENT_NAME"         --dataset-loc "$DATASET_LOC"         --train-loop-config "$TRAIN_LOOP_CONFIG"         --num-workers 1         --cpu-per-worker 20         --gpu-per-worker 0         --num-epochs 10         --batch-size 256         --results-fp results/training_results.json
+    """
     """This function trains the model given the settings passed in
 
     Args:
