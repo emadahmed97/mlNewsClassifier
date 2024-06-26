@@ -4,5 +4,5 @@ pytest --dataset-loc=$DATASET_LOC tests/data --verbose --disable-warnings > $RES
 cat $RESULTS_FILE
 
 export MODEL_REGISTRY=$(python -c "from src import config; print(config.MODEL_REGISTRY)")
-aws s3 cp $MODEL_REGISTRY s3://madewithml/$GITHUB_USERNAME/mlflow/ --recursive
-aws s3 cp results/ s3://madewithml/$GITHUB_USERNAME/results/ --recursive
+aws s3 cp $MODEL_REGISTRY s3://ml-news-classifier/mlflow/ --recursive
+aws s3 cp results/ s3://ml-news-classifier/results/ --recursive

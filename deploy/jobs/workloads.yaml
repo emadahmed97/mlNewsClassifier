@@ -1,6 +1,6 @@
 name: workloads
 project_id: prj_tryzq3fhhfzk7k9feigcwt461j
-cluster_env: lNewsClassifier:1
+cluster_env: ml-compute-config
 compute_config: ml-news-classifier
 runtime_env:
   working_dir: .
