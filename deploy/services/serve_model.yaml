@@ -1,0 +1,12 @@
+name: mlNewsClassifier
+project_id: prj_tryzq3fhhfzk7k9feigcwt461j
+cluster_env: ml-compute-config
+compute_config: ml-news-classifier
+ray_serve_config:
+  import_path: deploy.services.serve_model:entrypoint
+  runtime_env:
+    working_dir: .
+    upload_path: s3://ml-news-classifier/services  # <--- CHANGE USERNAME (case-sensitive)
+    env_vars:
+      GITHUB_USERNAME: emadahmed97  # <--- CHANGE USERNAME (case-sensitive)
+rollout_strategy: ROLLOUT
