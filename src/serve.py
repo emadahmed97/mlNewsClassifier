@@ -8,8 +8,10 @@ from fastapi import FastAPI
 from ray import serve
 from starlette.requests import Request
 
-from madewithml import evaluate, predict
-from madewithml.config import MLFLOW_TRACKING_URI, mlflow
+from src.evaluate import evaluate
+from src.predict import 
+
+from src.config import MLFLOW_TRACKING_URI, mlflow
 
 # Define application
 app = FastAPI(
@@ -48,7 +50,7 @@ class ModelDeployment:
     @app.post("/evaluate/")
     async def _evaluate(self, request: Request) -> Dict:
         data = await request.json()
-        results = evaluate.evaluate(run_id=self.run_id, dataset_loc=data.get("dataset"))
+        results = evaluate(run_id=self.run_id, dataset_loc=data.get("dataset"))
         return {"results": results}
 
     @app.post("/predict/")

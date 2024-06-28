@@ -19,8 +19,8 @@ from ray.tune.search import ConcurrencyLimiter
 from ray.tune.search.hyperopt import HyperOptSearch
 from typing_extensions import Annotated
 
-from madewithml import data, train, utils
-from madewithml.config import EFS_DIR, MLFLOW_TRACKING_URI, logger
+import data, train, utils
+from src.config import EFS_DIR, MLFLOW_TRACKING_URI, logger
 
 # Initialize Typer CLI app
 app = typer.Typer()

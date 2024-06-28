@@ -11,10 +11,10 @@ from ray.air import Result
 from ray.train.torch.torch_checkpoint import TorchCheckpoint
 from typing_extensions import Annotated
 
-from madewithml.config import logger, mlflow
-from madewithml.data import CustomPreprocessor
-from madewithml.models import FinetunedLLM
-from madewithml.utils import collate_fn
+from src.config import logger, mlflow
+from src.data import CustomPreprocessor
+from src.models import FinetunedLLM
+from src.utils import collate_fn
 
 # Initialize Typer CLI app
 app = typer.Typer()
