@@ -1,0 +1,10 @@
+name: service-hello
+cluster_env: ml-compute-config
+ray_serve_config:
+  applications:
+    - name: default
+      import_path: serve_hello:entrypoint
+      runtime_env:
+        working_dir: .
+        env_vars:
+          SERVE_RESPONSE_MESSAGE: service says hello

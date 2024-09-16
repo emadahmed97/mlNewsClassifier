@@ -11,10 +11,10 @@ from ray.air import Result
 from ray.train.torch.torch_checkpoint import TorchCheckpoint
 from typing_extensions import Annotated
 
-from src.config import logger, mlflow
-from src.data import CustomPreprocessor
-from src.models import FinetunedLLM
-from src.utils import collate_fn
+from config import logger, mlflow
+from data import CustomPreprocessor
+from models import FinetunedLLM
+from utils import collate_fn
 
 # Initialize Typer CLI app
 app = typer.Typer()
@@ -129,6 +129,7 @@ def get_best_checkpoint(run_id: str) -> TorchCheckpoint:  # pragma: no cover, ml
         TorchCheckpoint: Best checkpoint from the run.
     """
     artifact_dir = urlparse(mlflow.get_run(run_id).info.artifact_uri).path  # get path from mlflow
+    print(artifact_dir)
     results = Result.from_path(artifact_dir)
     return results.best_checkpoints[0][0]
 

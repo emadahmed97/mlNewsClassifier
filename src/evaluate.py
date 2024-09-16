@@ -12,9 +12,9 @@ from sklearn.metrics import precision_recall_fscore_support
 from snorkel.slicing import PandasSFApplier, slicing_function
 from typing_extensions import Annotated
 
-from src import predict, utils
-from src.config import logger
-from src.predict import TorchPredictor
+import predict, utils
+from config import logger
+
 
 # Initialize Typer CLI app
 app = typer.Typer()
@@ -124,7 +124,7 @@ def evaluate(
     # Load
     ds = ray.data.read_csv(dataset_loc)
     best_checkpoint = predict.get_best_checkpoint(run_id=run_id)
-    predictor = TorchPredictor.from_checkpoint(best_checkpoint)
+    predictor = predict.TorchPredictor.from_checkpoint(best_checkpoint)
 
     # y_true
     preprocessor = predictor.get_preprocessor()

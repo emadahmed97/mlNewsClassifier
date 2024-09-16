@@ -124,6 +124,9 @@ def train_model(
     results_fp: Annotated[str, typer.Option(help="filepath to save results to.")] = None,
 ) -> ray.air.result.Result:
     """
+    export EXPERIMENT_NAME="llm"
+    export DATASET_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/dataset.csv"
+    export TRAIN_LOOP_CONFIG='{"dropout_p": 0.5, "lr": 1e-4, "lr_factor": 0.8, "lr_patience": 3}'
     python src/train.py         --experiment-name "$EXPERIMENT_NAME"         --dataset-loc "$DATASET_LOC"         --train-loop-config "$TRAIN_LOOP_CONFIG"         --num-workers 1         --cpu-per-worker 20         --gpu-per-worker 0         --num-epochs 10         --batch-size 256         --results-fp results/training_results.json
     """
     """This function trains the model given the settings passed in
@@ -161,7 +164,7 @@ def train_model(
 
     # Run config
 
-    run_config = RunConfig(callbacks=[mlflow_callback], checkpoint_config=checkpoint_config, storage_path=EFS_DIR, local_dir=EFS_DIR)
+    run_config = RunConfig(callbacks=[mlflow_callback], checkpoint_config=checkpoint_config, storage_path=EFS_DIR)
 
     # Dataset
     ds = data.load_data(dataset_loc=dataset_loc, num_samples=training_loop_config["num_samples"])

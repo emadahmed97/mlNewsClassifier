@@ -7,11 +7,10 @@ import ray
 from fastapi import FastAPI
 from ray import serve
 from starlette.requests import Request
+import predict
+import evaluate
 
-from src.evaluate import evaluate
-from src.predict import 
-
-from src.config import MLFLOW_TRACKING_URI, mlflow
+from config import MLFLOW_TRACKING_URI, mlflow
 
 # Define application
 app = FastAPI(
@@ -24,7 +23,7 @@ app = FastAPI(
 @serve.deployment(num_replicas="1", ray_actor_options={"num_cpus": 8, "num_gpus": 0})
 @serve.ingress(app)
 class ModelDeployment:
-    def __init__(self, run_id: str, threshold: int = 0.9):
+    def __init__(self, run_id: str, threshold: float = 0.9):
         """Initialize the model."""
         self.run_id = run_id
         self.threshold = threshold
@@ -50,7 +49,7 @@ class ModelDeployment:
     @app.post("/evaluate/")
     async def _evaluate(self, request: Request) -> Dict:
         data = await request.json()
-        results = evaluate(run_id=self.run_id, dataset_loc=data.get("dataset"))
+        results = evaluate.evaluate(run_id=self.run_id, dataset_loc=data.get("dataset"))
         return {"results": results}
 
     @app.post("/predict/")
@@ -69,10 +68,11 @@ class ModelDeployment:
         return {"results": results}
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--run_id", help="run ID to use for serving.")
-    parser.add_argument("--threshold", type=float, default=0.9, help="threshold for `other` class.")
-    args = parser.parse_args()
-    ray.init(runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ["GITHUB_USERNAME"]}})
-    serve.run(ModelDeployment.bind(run_id=args.run_id, threshold=args.threshold))
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--run_id", help="run ID to use for serving.")
+parser.add_argument("--threshold", type=float, default=0.9, help="threshold for `other` class.")
+args = parser.parse_args()
+ray.init(runtime_env={"env_vars": {"GITHUB_USERNAME": os.environ["GITHUB_USERNAME"]}})
+
+news_classifier = serve.run(ModelDeployment.bind(run_id=args.run_id, threshold=args.threshold))
